@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="headd">
+            <div class="first_head">
+            <div class="zomato box"> 
+                <p>ZOMATO</p>
+            </div>
+            <div class="search box" >
+                <input type="search" placeholder="search for restaurant " >
+            </div>
+            <div class="login box">
+                    <button>Log in</button>
+            </div>
+            <div class="sign box">
+                <button>Sign up</button>  
+            </div>
+        </div>
+    </header>
+    <div id="head">
+        <button id="Filters">Filters</button>
+        <button id="Offers">Offers</button>
+        <button id="Rating">Rating 4.5+</button>
+        <button id="Alcohal">Services Alcohal</button>
+        <!-- <button id="Open">Open Now</button> -->
+    </div>
+    <!-- FILTERS OPTIONS POPUP -->
+     <div id="filterPopup" class="hidden" >
+        <span id="close-btn" onclick="closeModal()">&times;</span>
+        <h3 id="choosefilter" >Choose Filter</h3><hr>
+        <div class="filterOption">
+            <input type="radio" id="sortByRating" name="filterOption" value="rating" checked>
+            <label for="sortByRating">Rating: High to Low</label>
+        </div>
+        <div class="filterOption">
+            <input type="radio" id="sortHightoLow" name="filterOption" value="highlow">
+            <label for="sortHightoLow">High To Low (Price)</label>
+        </div>
+        <div class="filterOption">
+            <input type="radio" id="sortLowtoHigh" name="filterOption" value="lowhigh">
+            <label for="sortLowtoHigh">Low to High (Price)</label>
+        </div>
+        
+        <div class="filterOption">
+            <input type="radio" id="distance" name="filterOption" value="distance">
+            <label for="distance">Distance</label>
+        </div>
+        <div class="buttons">
+            <button id="clear">Clear</button>
+           <button id="Apply">Apply</button> 
+        </div>      
+
+     </div>
+    <div id="root">
+
+    </div>
+    <script src="zomatoJS.js"></script>
+</body>
+</html>

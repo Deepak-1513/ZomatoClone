@@ -1,0 +1,300 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(249, 232, 232);
+}
+header {
+    background-color: #e23744;
+    padding: 1rem;
+    color: white;
+}
+
+.headd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.first_head {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+.zomato p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.search input[type="search"] {
+    padding: 0.5rem 1rem;
+    width: 350px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+}
+
+.login button,
+.sign button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    color: #e23744;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Filter buttons header */
+#head {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#head button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Restaurant cards grid */
+#root {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rating {
+    background-color: #e53935;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.card-location {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.distance {
+    font-weight: bold;
+}
+
+/* Discount badge */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.off {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    width: auto;
+    max-width: 70%;
+    background: linear-gradient(to right, #dc3545 70%, rgba(220, 53, 69, 0) 100%);
+    font-weight: bold;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Filter popup */
+#filterPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.filterOption {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.filterOption input {
+    margin-right: 10px;
+}
+
+.filterOption label {
+    font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#close-btn {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .first_head {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search input[type="search"] {
+        width: 100%;
+    }
+
+    .login, .sign {
+        width: 100%;
+    }
+
+    .login button, .sign button {
+        width: 100%;
+    }
+
+    #head {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px 5px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #head::-webkit-scrollbar {
+        display: none;
+    }
+
+    #root {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        padding: 10px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .zomato p {
+        font-size: 1.5rem;
+    }
+
+    #root {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+.hidden{
+    display:none;
+}
+#close-btn{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    font-size: 20px;
+}
